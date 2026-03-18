@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<title>ZipShield</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
