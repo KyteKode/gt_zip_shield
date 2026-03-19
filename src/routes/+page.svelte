@@ -1,30 +1,23 @@
-<div id="logo">
-    <img src={title} alt="ZipShield" id="title"/>
-    <img src={slogan} alt="Stop the snap." id="slogan" />
-</div>
+<header>
+	<div id="logo">
+        <img src={title} alt="ZipShield" id="title"/>
+        <img src={slogan} alt="Stop the snap." id="slogan" />
+    </div>
+</header>
 
 <div id="problem">
-    <p>
-        Isn't it annoying when you're running
-       and your zipper keeps flailing around, slapping you?
-    </p>
-    <p class="big_text">
-        ZipShield has a solution for you!
-    </p>
+    <p>Isn't it annoying when your zipper keeps flailing around, slapping you?</p>
+    <p class="big_text">ZipShield is your solution.</p>
 </div>
 
-<div id="zs_pictures">
-    <img src={placeholder_img} alt="Placeholder" class="zs_picture"/>
-    <img src={placeholder_img} alt="Placeholder" class="zs_picture"/>
-    <img src={placeholder_img} alt="Placeholder" class="zs_picture"/>
-    <img src={placeholder_img} alt="Placeholder" class="zs_picture"/>
+<div class="zs_pics">
+    <img src={placeholder_img} alt="Placeholder">
+    <img src={placeholder_img} alt="Placeholder">
+    <img src={placeholder_img} alt="Placeholder">
+    <img src={placeholder_img} alt="Placeholder">
 </div>
 
-<p>
-    ZipShield solves this problem by attaching to the zipper's pull tab and the inside of your jacket.
-    This product is 3d printed with PLA filament.
-</p>
-
+<p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p>
 
 
 <script lang="ts">
@@ -37,23 +30,113 @@
 
 
 <style lang="scss">
-    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
     :root {
-        background: linear-gradient(30deg, #1474b9, #062338);
-        //background-color: #093453;
-        color: #ffffff;
+        color: white;
 
-        font-family: "IBM Plex Sans", sans-serif;
+        font-family: "Poppins";
         font-size: 1.35rem;
 
         font-weight: bold;
-        overflow-x: hidden;
+    }
+
+    :global(body) {
+        background: linear-gradient(to bottom, #0b0b10, #161620);
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 15, 25, .4);
+            backdrop-filter: blur(8px) grayscale(30%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+    }
+
+    #logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0.8rem;
+        margin-left: 2rem;
+
+        img { animation: fadeIn 0.8s cubic-bezier(0.37, 0, 0.63, 1) both; }
+        
+        #title {
+            width: 7rem;
+        }
+
+        #slogan {
+            max-width: 85vw;
+            width: 7rem;
+            animation: fadeIn 0.8s cubic-bezier(0.37, 0, 0.63, 1) both;
+        }
     }
 
     #problem {
+        width: 100%;
+        text-align: center;
+    }
+
+    .zs_pics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        margin: auto;
+
+        margin-bottom: 3rem;
+
+        &:has(img:hover) img {
+            transform: scale(0.85);
+        }
+
+        img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 5px #00aaff, 0 0 40px #38bdff, 0 0 80px #89d8ff;
+        }
+
+        img {
+            max-width: 20vw;
+            max-height: 20vw;
+
+            width: 20rem;
+            height: 20rem;
+
+            margin: auto;
+            margin-top: 3rem;
+
+            border: 7px solid #062339;
+
+            transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1),
+                box-shadow 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+
+            &:hover {
+                transform: scale(1.2) !important;
+                box-shadow: 0 0 5px #00aaff, 0 0 40px #38bdff, 0 0 80px #89d8ff;
+            }
+
+            @supports (corner-shape: squircle) {
+                border-radius: 40% / 40%;
+                corner-shape: squircle;
+            }
+
+            @supports not (corner-shape: squircle) {
+                border-radius: 20% / 20%;
+            }
+        }
+    }
+    /*#problem {
         //background-color: #00689c;
-        background-color: #b3e1ff;
+        background-color: #ffffff;
         color: #003d66;
 
         box-sizing: border-box;
@@ -99,8 +182,8 @@
         }
 
         img {
-            max-width: 22.5vw;
-            max-height: 22.5vw;
+            max-width: 20vw;
+            max-height: 20vw;
 
             width: 20rem;
             height: 20rem;
@@ -127,30 +210,7 @@
                 border-radius: 20% / 20%;
             }
         }
-    }
-
-    #logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        margin: 1rem;
-        margin-bottom: 2rem;
-
-        img { animation: fadeIn 0.8s cubic-bezier(0.37, 0, 0.63, 1) both; }
-        
-        #title {
-            max-width: 90vw;
-            width: 20rem;
-        }
-
-        #slogan {
-            max-width: 85vw;
-            width: 18rem;
-            animation: fadeIn 0.8s cubic-bezier(0.37, 0, 0.63, 1) both;
-        }
-    }
+    }*/
 
     @keyframes fadeIn {
         from {
