@@ -13,17 +13,19 @@
     </div>
 </div>
 
-<div id="buy_wrapper">
-    <a class="button bolded" href="/buy">Buy Now</a>
-</div>
-
 <p id="desc">
     Zipshield slides onto your zipper and hangs onto the inside of your jacket to stop it from flailing.
     It is easy to make, being 3d printed with inexpensive PLA filament.
 </p>
 
-<p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p>
-
+<div id="center_thingy">
+    <p>You can buy this at:</p>
+    <div id="buy_locations">
+        <a class="button">Target</a>
+        <a class="button">Walmart</a>
+        <a class="button bolded" href="/buy">This website</a>
+    </div>
+</div>
 
 <script lang="ts">
     import slogan from "$lib/assets/slogan.png";
@@ -36,11 +38,20 @@
 <style lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     
-    #buy_wrapper {
+    #buy_locations {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
+
+        a { margin: 0 1rem; }
+    }
+
+    #center_thingy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     #hook {

@@ -55,7 +55,7 @@
 		margin-bottom: 0.4rem;
     }
 
-	:global(.button) {
+	:global(.button.bolded) {
         transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1),
             box-shadow 0.3s cubic-bezier(0.37, 0, 0.63, 1);
 
@@ -63,6 +63,21 @@
         padding: 0.5rem 1rem;
         border-radius: 0.75rem;
         color: white;
+        text-decoration: none;
+
+        &:hover {
+            box-shadow: 0 0 5px #00aaff, 0 0 20px #38bdff, 0 0 40px #89d8ff;
+        }
+    }
+
+    :global(.button:not(.bolded)) {
+        transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1),
+            box-shadow 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+
+        background: #eff5ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.75rem;
+        color: #3d3d3d;
         text-decoration: none;
         font-weight: 400;
 
