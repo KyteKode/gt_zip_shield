@@ -1,17 +1,17 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
 
-	import title from "$lib/assets/title.png";
+	import logo from "$lib/assets/logo.png";
 
 	let { children } = $props();
 </script>
 
 <header>
 	<a href="/">
-		<img src={title} alt="ZipShield" id="logo"/>
+		<img src={logo} alt="ZipShield" id="logo"/>
 	</a>
 
-	<a href="/buy">Buy</a>
+	<!--<a href="/buy">Buy</a>-->
 </header>
 
 <svelte:head>
@@ -26,7 +26,7 @@
         font-family: "Poppins";
         font-size: 1.35rem;
 
-        font-weight: bold;
+        font-weight: 400;
     }
 
     :global(body) {
@@ -39,21 +39,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 15, 25, .75);
+            background: rgba(18, 18, 40, .7);
             backdrop-filter: blur(8px) grayscale(40%);
             position: sticky;
             top: 0;
             z-index: 100;
 
-			padding-left: 2rem;
-			padding-right: 2rem;
+			padding: 0 2rem;
     }
 
 	#logo {
         width: 9rem;
 
         margin-top: 0.8rem;
-		margin-bottom: 0.8rem;
+		margin-bottom: 0.4rem;
     }
 
 	:global(.button) {
@@ -61,22 +60,18 @@
             box-shadow 0.3s cubic-bezier(0.37, 0, 0.63, 1);
 
         background: #3b82f6;
-        padding: 14px 30px;
-        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        border-radius: 0.75rem;
         color: white;
         text-decoration: none;
-        font-weight: 600;
-
-        margin-right: 10px;
-
-        margin: 5rem;
+        font-weight: 400;
 
         &:hover {
             box-shadow: 0 0 5px #00aaff, 0 0 20px #38bdff, 0 0 40px #89d8ff;
         }
     }
 
-	a:not(:global(.button)) {
+    a:not(:global(.button)) {
 		transition: transform 0.3s cubic-bezier(0.37, 0, 0.63, 1),
         	color 0.3s cubic-bezier(0.37, 0, 0.63, 1);
 
@@ -88,6 +83,19 @@
 			transform: scale(1.2);
         }
 	}
+
+    :global(.bolded) {
+        font-weight: 600;
+    }
+
+    :global(.row_wrapper) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        width: 100%;
+        text-align: center;
+    }
 </style>
 
 {@render children()}
